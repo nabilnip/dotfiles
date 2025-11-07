@@ -1,0 +1,28 @@
+#shell /usr/bin/zsh
+
+#window
+#kitty_mod ctr+shift
+enabled_layouts tall:bias=50;full_size=1;mirrored=false
+map ctrl+[ layout_action decrease_num_full_size_windows
+map ctrl+] layout_action increase_num_full_size_windows
+map ctrl+/ layout_action mirror toggle
+map ctrl+y layout_action mirror true
+map ctrl+n layout_action mirror false
+
+# BEGIN_KITTY_THEME
+# Darkthemes
+include Afterglow.conf
+# END_KITTY_THEME
+
+map ctrl+shift+c copy_to_clipboard
+map ctrl+shift+v paste_from_clipboard
+
+#transparency
+#background_opacity 
+
+#window_margin_width 0 
+#background_blur 1
+
+#fonts
+font_family      JetBrainsMono Nerd Font Mono
+
