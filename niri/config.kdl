@@ -4,8 +4,8 @@ input {
 
   mod-key "Alt"
     keyboard {
-        repeat-delay 200
-        repeat-rate 35
+        // repeat-delay 200
+        // repeat-rate 35
         xkb {
         }
         numlock
@@ -14,7 +14,7 @@ input {
     touchpad {
         // off
         tap
-        // dwt
+        dwt
         // dwtp
         // drag false
         // drag-lock
@@ -65,7 +65,7 @@ layout {
     focus-ring {
         width 1.5
 
-        active-color "#7fc8ff"
+        active-color "#d3d3d3"
 
         inactive-color "#505050"
     }
@@ -95,7 +95,7 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-sh-at-startup "qs -c ~/.config/quickshell/noctalia-shell/"
-spawn-sh-at-startup "swaybg -i /home/Nabilnip/Pictures/Wallpaper/white.jpg"
+spawn-sh-at-startup "swaybg -i /home/nabilnip/Pictures/Walls/black.jpg"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -165,7 +165,7 @@ workspace "a" {
 
 window-rule {
     match title="Firefox"
-    open-on-workspace "c"
+    open-on-workspace "b"
     open-maximized true
 }
 
@@ -196,8 +196,10 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
-    Mod+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn-sh "rofi -show drun"; }
     Super+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Super+E hotkey-overlay-title="Open a File Manager: Nautilus" {spawn-sh "nautilus";}
+    // Super+I hotkey-overlay-title="Open a Better-control" {spawn-sh "better-control";}
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
@@ -222,7 +224,7 @@ binds {
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
     Mod+O repeat=false { toggle-overview; }
-    Mod+Q repeat=false { close-window; }
+    Mod+Shift+Q repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
